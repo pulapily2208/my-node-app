@@ -4,4 +4,18 @@ module.exports = {
   viewsFolder: `${__dirname}/../src/apps/views/`,
   viewEngine: "ejs",
   staticFolder: `${__dirname}/../src/public`,
+  pagination: {
+    limit: 10,
+    delta: 2
+  },
+  session: {
+    secret: 'vietpro_key', // đặt tên tuỳ ý cho key
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      secure: false
+    }
+  },
+  trustProxy: 1
 };
+

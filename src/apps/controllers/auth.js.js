@@ -10,6 +10,8 @@ exports.postLogin = async (req, res) => {
     let error;
     if (user) {
         if (user.password === password) {
+            req.session.email = email;
+            req.session.password = password;
             return res.redirect("/admin/dashboard");
           } else {
             error = "Mật khẩu không hợp lệ !";
@@ -22,5 +24,6 @@ exports.postLogin = async (req, res) => {
 
 
 exports.Logout = (req, res) => {
-    return res.send("LOGOUT");
-};
+    req.session.destroy();
+    return res.redirect("/admin/login");
+}; 

@@ -1,12 +1,41 @@
 const UserModel = require('../models/user');
 const CategoryModel = require('../models/category');
 const ProductModel = require("../models/product");
-exports.Test = async (req, res) => {
-    
-    const products = await  ProductModel.find({})
-    .populate({ path: "cat_id"});
+exports.test1 = async (req, res) => {
+    req.session.email = "dfsfsfs"
+    res.send("Test 1")
+ 
+}
+exports.test2 = async(req,res) => {
+    res.send("Test 2")
 
-    console.log(products);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// exports.Test = async (req, res) => {
+
+//     console.log(req.param.str);
     
     // Thêm
     // const user = {
@@ -32,7 +61,7 @@ exports.Test = async (req, res) => {
     //     console.log(docs);
     //   }
     // );
-};
+// };
 
 // exports.Form = (req, res) => {
 //     return res.send(
